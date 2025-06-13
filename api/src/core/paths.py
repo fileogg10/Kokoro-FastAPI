@@ -401,6 +401,7 @@ async def get_temp_file_path(filename: str) -> str:
     Raises:
         RuntimeError: If temp directory does not exist
     """
+
     temp_path = os.path.join(settings.temp_file_dir, filename)
 
     # Ensure temp directory exists
