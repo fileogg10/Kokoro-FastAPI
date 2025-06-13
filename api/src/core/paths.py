@@ -76,7 +76,15 @@ async def _scan_directories(
 
 
 async def get_model_path(model_name: str) -> str:
-    """Get path to model file.
+    """Get path to model file."""
+    model_dir = os.environ.get("KOKORO_MODEL_DIR", "/tmp/kokoro_models")
+    os.makedirs(model_dir, exist_ok=True)
+
+    search_paths = [model_dir]
+    logger.debug(f"Searching for model in path: {model_dir}")
+
+    return await _find_file(model_name, search_paths)
+
 
     Args:
         model_name: Name of model file
@@ -104,7 +112,16 @@ async def get_model_path(model_name: str) -> str:
 
 
 async def get_voice_path(voice_name: str) -> str:
-    """Get path to voice file.
+    """Get path to voice file."""
+    voice_dir = os.environ.get("KOKORO_MODEL_DIR", "/tmp/kokoro_models")
+    os.makedirs(voice_dir, exist_ok=True)
+
+    voice_file = f"{voice_name}.pt"
+    search_paths = [voice_dir]
+    logger.debug(f"Searching for voice in path: {voice_dir}")
+
+    return await _find_file(voice_file, search_paths)
+
 
     Args:
         voice_name: Name of voice file (without .pt extension)
@@ -134,7 +151,18 @@ async def get_voice_path(voice_name: str) -> str:
 
 
 async def list_voices() -> List[str]:
-    """List available voice files.
+    voice_dir = os.environ.get("KOKORO_MODEL_DIR", "/tmp/kokoro_models")
+    os.makedirs(voice_dir, exist_ok=True)
+
+    search_paths = [voice_dir]
+    logger.debug(f"Scanning for voices in path: {voice_dir}")
+
+    def filter_voice_files(name: str) -> bool:
+        return name.endswith(".pt")
+
+    voices = await _scan_directories(search_paths, filter_voice_files)
+    return sorted([name[:-3] for name in voices])
+
 
     Returns:
         List of voice names (without .pt extension)
