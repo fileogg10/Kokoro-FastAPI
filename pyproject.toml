@@ -17,6 +17,7 @@ torch = "^2.3.0"
 text2num = "^2.5.1"
 tiktoken = "^0.8.0"
 spacy = "3.8.5"
+pydantic-settings = "^2.2.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.2.1"
