@@ -23,7 +23,7 @@ dependencies = [
     # ML/DL Base
     "numpy>=1.26.0",
     "scipy==1.14.1",
-    "torch==2.6.0",  # ✅ CPU-compatible version
+    "torch==2.2.2",  # ✅ CPU-compatible version
 
     # Audio processing
     "soundfile==0.13.0",
