@@ -9,7 +9,7 @@ package-mode = false
 python = ">=3.10,<3.13"
 aiohttp = "3.9.5"
 openai = "^1.59.6"
-pyaudio = ">=0.2.13"
+pyaudio = { url = "https://files.pythonhosted.org/packages/85/d1/.../PyAudio‑0.2.11‑cp310‑cp310‑manylinux1_x86_64.whl" }
 
 fastapi = "0.115.6"
 uvicorn = "0.34.0"
