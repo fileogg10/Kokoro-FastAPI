@@ -5,7 +5,8 @@ description = "FastAPI TTS Service"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dynamic = ["dependencies"]
-
+[tool.poetry]
+package-mode = false
 dependencies = [
     # Web + API
     "fastapi==0.115.6",
