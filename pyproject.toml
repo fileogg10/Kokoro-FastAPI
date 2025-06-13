@@ -3,7 +3,7 @@ name = "kokoro-fastapi"
 version = "0.3.0"
 description = "FastAPI TTS Service"
 authors = ["you@example.com"]
-package-mode = false
+package-mode = false  # ✅ MUST be here, not under [project]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
@@ -30,7 +30,7 @@ mutagen = "1.47.0"
 psutil = "6.1.1"
 espeakng-loader = "0.2.4"
 kokoro = "0.9.2"
-misaki = {version = "0.9.3", extras = ["en", "ja", "ko", "zh"]}
+misaki = { version = "0.9.3", extras = ["en", "ja", "ko", "zh"] }
 spacy = "3.8.5"
 inflect = "7.5.0"
 phonemizer-fork = "3.3.2"
