@@ -85,7 +85,7 @@ async def get_model_path(model_name: str) -> str:
     Raises:
         RuntimeError: If model not found
     """
-    model_dir = os.environ.get("KOKORO_MODEL_DIR", "/tmp/kokoro_models")
+    model_dir = os.environ.get("KOKORO_MODEL_DIR", os.path.join(os.path.dirname(__file__), "../../models"))
     os.makedirs(model_dir, exist_ok=True)
     logger.debug(f"Searching for model in path: {model_dir}")
     return await _find_file(model_name, [model_dir])
