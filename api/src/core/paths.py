@@ -91,7 +91,7 @@ async def get_model_path(model_name: str) -> str:
     api_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
     # Construct model directory path relative to api directory
-    model_dir = os.path.join(api_dir, settings.model_dir)
+    model_dir = os.environ.get("KOKORO_MODEL_DIR", "/tmp/kokoro_models")
 
     # Ensure model directory exists
     os.makedirs(model_dir, exist_ok=True)
