@@ -1,71 +1,52 @@
-[project]
+[tool.poetry]
 name = "kokoro-fastapi"
 version = "0.3.0"
 description = "FastAPI TTS Service"
-readme = "README.md"
-requires-python = ">=3.10,<3.13"
-dynamic = ["dependencies"]
-
+authors = ["you@example.com"]
 package-mode = false
-dependencies = [
-    # Web + API
-    "fastapi==0.115.6",
-    "uvicorn==0.34.0",
-    "click>=8.0.0",
-    "pydantic==2.10.4",
-    "pydantic-settings==2.7.0",
-    "python-dotenv==1.0.1",
-    "aiofiles==23.2.1",
-    "requests==2.32.3",
 
-    # Database
-    "sqlalchemy==2.0.27",
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+fastapi = "0.115.6"
+uvicorn = "0.34.0"
+click = "^8.0.0"
+pydantic = "2.10.4"
+pydantic-settings = "2.7.0"
+python-dotenv = "1.0.1"
+aiofiles = "23.2.1"
+requests = "2.32.3"
+sqlalchemy = "2.0.27"
+numpy = "1.26.4"
+scipy = "1.14.1"
+torch = "2.2.2"
+soundfile = "0.13.0"
+pydub = "0.25.1"
+matplotlib = "3.10.3"
+tiktoken = "0.8.0"
+munch = "4.0.0"
+loguru = "0.7.3"
+openai = "^1.59.6"
+mutagen = "1.47.0"
+psutil = "6.1.1"
+espeakng-loader = "0.2.4"
+kokoro = "0.9.2"
+misaki = {version = "0.9.3", extras = ["en", "ja", "ko", "zh"]}
+spacy = "3.8.5"
+inflect = "7.5.0"
+phonemizer-fork = "3.3.2"
+av = "14.2.0"
+text2num = "2.5.1"
+regex = "2024.11.6"
+en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
 
-    # ML/DL Base
-    "numpy>=1.26.0",
-    "scipy==1.14.1",
-    "torch==2.2.2",  # ✅ CPU-compatible version
-
-    # Audio processing
-    "soundfile==0.13.0",
-    "pydub>=0.25.1",
-    "mutagen>=1.47.0",
-    "espeakng-loader==0.2.4",
-
-    # NLP
-    "spacy==3.8.5",
-    "inflect>=7.5.0",
-    "phonemizer-fork>=3.3.2",
-    "text2num>=2.5.1",
-    "misaki[en,ja,ko,zh]==0.9.3",
-    "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
-
-    # Utility
-    "munch==4.0.0",
-    "tiktoken==0.8.0",
-    "loguru==0.7.3",
-    "openai>=1.59.6",
-    "matplotlib>=3.10.0",
-    "psutil>=6.1.1",
-    "regex==2024.11.6",
-    "kokoro==0.9.2"
-]
-
-[project.optional-dependencies]
-test = [
-    "pytest==8.3.5",
-    "pytest-cov==6.0.0",
-    "httpx==0.26.0",
-    "pytest-asyncio==0.25.3",
-    "tomli>=2.0.1",
-    "jinja2>=3.1.6"
-]
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.5"
+pytest-cov = "6.0.0"
+httpx = "0.26.0"
+pytest-asyncio = "0.25.3"
+tomli = "2.0.1"
+jinja2 = "3.1.6"
 
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-# ✅ Disable project packaging to avoid "No file/folder for package" error on Render
-[tool.setuptools]
-package-dir = {}
-packages = []
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
