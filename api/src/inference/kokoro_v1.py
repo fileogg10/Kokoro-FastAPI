@@ -5,7 +5,7 @@ from typing import AsyncGenerator, Dict, Optional, Tuple, Union
 
 import numpy as np
 import torch
-from kokoro import KModel, KPipeline
+from .kokoro import KModel, KPipeline
 from loguru import logger
 
 from ..core import paths
