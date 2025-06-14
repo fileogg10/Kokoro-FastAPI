@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from fastapi import APIRouter, Depends, Header, HTTPException, Request, Response
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
-from kokoro import KPipeline
+from ..kokoro import KPipeline
 from loguru import logger
 
 from ..core.config import settings
