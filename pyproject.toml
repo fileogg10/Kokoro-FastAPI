@@ -1,8 +1,10 @@
 [tool.poetry]
+[tool.poetry]
 name = "kokoro-fastapi"
 version = "0.1.0"
-description = "FastAPI app for Kokoro voice synthesis"
-authors = ["Your Name <you@example.com>"]
+description = "..."
+authors = ["you@example.com"]
+
 license = "MIT"
 
 [tool.poetry.dependencies]
