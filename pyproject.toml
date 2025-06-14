@@ -6,6 +6,7 @@ authors = ["Your Name <you@example.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
+inflect = "^7.2.0"
 soundfile = "^0.12.1"
 inflect = "^7.2.0"
 av = "^11.0.0"
