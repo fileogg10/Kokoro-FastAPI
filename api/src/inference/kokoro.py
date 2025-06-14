@@ -3,6 +3,7 @@
 import os
 from typing import AsyncGenerator, Dict, Optional, Tuple, Union
 from .kokoro_pipeline_module import KPipeline
+from .kmodel_module import KModel
 import numpy as np
 import torch
 # REMOVE this line if it's self-import
