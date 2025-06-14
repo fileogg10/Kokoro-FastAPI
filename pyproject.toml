@@ -2,9 +2,9 @@
 name = "kokoro-fastapi"
 version = "0.1.0"
 description = "A FastAPI app"
-authors = ["fileogg10 <you@example.com>"]
+authors = ["you@example.com"]
 license = "MIT"
-
+name = "kokoro-fastapi"  # ← ❌ This is the duplicate
 [tool.poetry.dependencies]
 inflect = "^7.2.0"
 soundfile = "^0.12.1"
