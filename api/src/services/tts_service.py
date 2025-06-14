@@ -9,7 +9,7 @@ from typing import AsyncGenerator, List, Optional, Tuple, Union
 
 import numpy as np
 import torch
-from kokoro import KPipeline
+from ..inference.kokoro import KPipeline
 from loguru import logger
 
 from ..core.config import settings
