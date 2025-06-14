@@ -14,7 +14,7 @@ aiofiles = "^23.2.1"
 aiohttp = "3.9.5"
 loguru = "^0.7.2"
 openai = ">=1.0.0"
-torch = { version = "^2.1.2+cpu", source = "pytorch-cpu" }
+torch = "^2.1.2+cpu"
 text2num = "^2.5.1"
 tiktoken = "^0.8.0"
 spacy = "3.8.5"
@@ -32,6 +32,7 @@ build-backend = "poetry.core.masonry.api"
 [[tool.poetry.source]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
+default = false
 
 
 
